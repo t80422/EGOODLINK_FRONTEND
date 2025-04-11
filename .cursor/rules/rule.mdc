@@ -1,0 +1,58 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## 一、專案架構
+
+- **根目錄主要檔案：**
+  - `nuxt.config.ts`：主要配置檔，設定 Nuxt 模組、插件、SSR 與 Nitro 等。
+  - `package.json`：定義專案依賴、啟動命令等 Node.js 相關設定。
+  - `tsconfig.json`：TypeScript 設定，確保型別安全。
+
+- **Nuxt 相關目錄（框架特有）：**
+  - `pages/`：存放頁面檔案，Nuxt 根據此目錄自動建置路由。
+  - `layouts/`：全局佈局檔案，用於定義不同頁面的框架佈局。
+  - `middleware/`：路由中介軟體，處理身份驗證、權限控管等。
+  - `plugins/`：初始化插件，整合第三方庫或註冊全局組件。
+  - `server/`：包含 API 與伺服器端中介程式，透過 Nitro 運行 SSR 與 API 服務。
+  - `.nuxt/`：開發及建置期間自動生成的快取與中間檔案，不應提交至版本控制。
+  - `.output/`：生產環境最終輸出目錄，包含完整部署所需前後端程式碼。
+
+- **Vue 核心與共用目錄：**
+  - `components/`：存放可重用 Vue 組件，實現前端 UI 的元件化。
+  - `stores/`：使用 Pinia 實現的狀態管理模組，用於前端同一狀態的集中管理。
+  - `assets/`：應用程式資源，例如 SCSS、圖片、字體等，透過建置工具處理。
+  - `public/`：靜態資源，不需編譯，直接複製到生產環境。
+  - `utils/`：輔助工具與共用函數，各功能模組可共用的邏輯或工具。
+
+## 二、使用技術
+
+- **前端框架：** Nuxt3（基於 Vue3）
+- **程式語言：** JavaScript / TypeScript
+- **狀態管理：** Pinia 與其持久化插件（@pinia-plugin-persistedstate/nuxt）
+- **UI 與元件庫：**
+  - Vuetify（搭配 vite-plugin-vuetify 使用，提供 Material Design 元件）
+  - Tailwind CSS（透過 @nuxtjs/tailwindcss 模組整合）
+- **其他第三方模組：**
+  - Nuxt Image：圖片優化與處理
+  - @vuepic/vue-datepicker：日期選擇器元件
+  - jwt-decode：用於解析 JSON Web Token
+- **建置工具：** Vite（加速建置與開發環境）
+- **伺服器端：** Nitro（用於 SSR 與後端 API 服務）
+- **版本控制：** Git（部分目錄與檔案如 `node_modules`、`.nuxt`、`.output` 均於 `.gitignore` 中忽略）
+
+## 三、部屬與運行
+
+- **建置：**
+  - 執行 `npm run build` 生成 `.output` 目錄（完整生產環境輸出）。
+- **部署：**
+  - 將 `.output` 部署至伺服器上，並使用 Node.js（或使用 PM2）啟動 `.output/server/index.mjs` 作為服務入口。
+  - 可搭配 Nginx 等反向代理伺服器，共同處理 HTTPS、負載均衡等工作。
+
+## 四、專案優勢與重點
+
+- **響應式資料流：** 基於 Vue3 的自動資料綁定，資料變化會立即反映到 UI，降低手動更新 DOM 的開發負擔。
+- **元件化開發：** 各模組、頁面、組件皆分層管理，提高重用性與維護性。
+- **多部署模式：** 兼容 SSR、靜態生成 (SSG) 與 API 服務，提供彈性的運行與部署方案。
+- **現代化技術：** 整合 TypeScript、Vite 及多項 Nuxt 模組，提升開發體驗與專案效能。

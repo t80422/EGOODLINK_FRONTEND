@@ -340,7 +340,7 @@ const handleCheckboxChange = (field) => {
     <Header />
     <v-main>
     <div class="flex-1 flex flex-col">
-      <main class="flex-1 pt-24 px-6">
+      <main class="flex-1">
         <div class="max-w-7xl mx-auto bg-white p-6">
           <div class="mb-6">
             <v-breadcrumbs
@@ -364,7 +364,7 @@ const handleCheckboxChange = (field) => {
           </v-breadcrumbs>
           </div>
           
-          <h2 class="text-2xl font-semibold text-gray-800 mb-6">詳細會員</h2>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-6">會員詳細</h2>
           
         <div>
             <div class="">
