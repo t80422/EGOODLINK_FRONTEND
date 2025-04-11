@@ -1,0 +1,40 @@
+# Node dependencies
+node_modules
+npm-debug.log*
+yarn-error.log
+yarn-debug.log
+
+# Logs
+logs
+*.log
+
+# Nuxt dev/build outputs
+.output
+.nuxt
+.nitro
+.cache
+dist
+
+# Project Specific (請確認 .data 是否需要保留)
+# .data
+
+# Local environment files
+# 請勿提交機密資訊！
+.env
+.env.*
+!.env.example
+
+# IDE / Editor Settings
+.idea
+.vscode/ # 如果您想共享 VS Code 設定，請移除此行
+.fleet/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# 可選：測試覆蓋率報告
+# coverage/
+# .nyc_output/

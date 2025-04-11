@@ -1,0 +1,46 @@
+@use './variables' as *;
+
+.edit-action,
+.delete-action,
+.view-action,
+.shipping-create {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.edit-action {
+  .v-btn {
+    color: $primary-color !important;
+    &:hover {
+      opacity: $hover-opacity;
+    }
+  }
+}
+
+.delete-action {
+  .v-btn {
+    color: $danger-color !important;
+    &:hover {
+      opacity: $hover-opacity;
+    }
+  }
+}
+
+.view-action {
+    .v-btn {
+      color: $view-color !important;
+      &:hover {
+        opacity: $hover-opacity;
+      }
+    }
+  }
+
+  .shipping-create {
+    .v-btn {
+      color: $success-color !important;
+      &:hover {
+        opacity: $hover-opacity;
+      }
+    }
+  }
