@@ -28,7 +28,7 @@ const getMobileSubItems = (path) => {
   switch (path) {
     case '/about':
       return [
-        { path: '/about', label: '關於安心E股領' },
+        { path: '/about', label: '關於安心E股領132' },
         { path: '/about/transport', label: '代領服務據點' },
         { path: '/about/faq', label: '常見問題' },
         { path: '/about/news', label: '最新消息' }
